@@ -136,29 +136,30 @@ class Library
                 switch (numberUser)
                 {
                     case 1:
-                        ShowBooksByTitle(ref isWork);
+                        ShowBooksByTitle();
                         break;
                     case 2:
-                        ShowBooksByAuthor(ref isWork);
+                        ShowBooksByAuthor();
                         break;
                     case 3:
-                        ShowBooksByGenre(ref isWork);
+                        ShowBooksByGenre();
                         break;
                     case 4:
-                        ShowBooksByYearOfRelease(ref isWork);
+                        ShowBooksByYearOfRelease();
                         break;
                     default:
                         ShowErrorMessage("Такого параметра нет!");
                         break;
 
                 }
+                isWork = false;
             }
         }
         else
             ShowErrorMessage();
     }
 
-    private void ShowBooksByTitle(ref bool isWork)
+    private void ShowBooksByTitle()
     {
         Console.WriteLine("Введите название книги:");
         string userInput = Console.ReadLine();
@@ -178,11 +179,9 @@ class Library
 
         Console.WriteLine("нажмите любую клавишу для продолжения...");
         Console.ReadKey();
-
-        isWork = false;
     }
 
-    private void ShowBooksByAuthor(ref bool isWork)
+    private void ShowBooksByAuthor()
     {
         Console.WriteLine("Введите имя автора:");
         string userInput = Console.ReadLine();
@@ -202,11 +201,9 @@ class Library
 
         Console.WriteLine("нажмите любую клавишу для продолжения...");
         Console.ReadKey();
-
-        isWork = false;
     }
 
-    private void ShowBooksByGenre(ref bool isWork)
+    private void ShowBooksByGenre()
     {
         Console.WriteLine("Введите название жанра:");
         string userInput = Console.ReadLine();
@@ -226,11 +223,9 @@ class Library
 
         Console.WriteLine("нажмите любую клавишу для продолжения...");
         Console.ReadKey();
-
-        isWork = false;
     }
 
-    private void ShowBooksByYearOfRelease(ref bool isWork)
+    private void ShowBooksByYearOfRelease()
     {
         Console.WriteLine("Введите год выпуска:");
         int userInput = GetNumber();
@@ -250,8 +245,6 @@ class Library
 
         Console.WriteLine("нажмите любую клавишу для продолжения...");
         Console.ReadKey();
-
-        isWork = false;
     }
 
     private int GetNumber()
